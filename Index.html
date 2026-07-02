@@ -1,0 +1,514 @@
+# Jalan-hikmah-
+Tuntunan dalam melaksanakan ibadah sesuai ajaran agama Islam 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jalan Hikmah - Belajar Islam Mudah & Menyenangkan</title>
+    <meta name="description" content="Belajar Islam lengkap, mudah dipahami, dengan panduan wudu, sholat, kisah sahabat, dan fitur bermanfaat lainnya.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+
+        :root {
+            --hijau-utama: #2E7D32;
+            --hijau-muda: #E8F5E9;
+            --biru-langit: #E3F2FD;
+            --emas: #FFC107;
+            --abu-lembut: #F8F9FA;
+            --teks: #333333;
+            --putih: #FFFFFF;
+        }
+
+        body {
+            background-color: var(--abu-lembut);
+            color: var(--teks);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Animasi Umum */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.4); }
+            70% { box-shadow: 0 0 0 12px rgba(46, 125, 50, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(46, 125, 50, 0); }
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--hijau-utama), #388E3C);
+            color: var(--putih);
+            text-align: center;
+            padding: 2.5rem 1rem;
+            border-radius: 0 0 25px 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        header h1 {
+            font-size: 1.9rem;
+            margin-bottom: 0.6rem;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        header p {
+            opacity: 0.95;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Navigasi */
+        nav {
+            background: var(--putih);
+            position: sticky;
+            top: 0;
+            z-index: 99;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 0.9rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--hijau-utama);
+            font-weight: 600;
+            padding: 0.5rem 0.9rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--hijau-muda);
+            transform: translateY(-2px);
+        }
+
+        /* Kontainer Utama */
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1.2rem;
+        }
+
+        .card {
+            background: var(--putih);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            animation: fadeInUp 0.7s ease-out;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+
+        .card h2 {
+            color: var(--hijau-utama);
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid var(--hijau-muda);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card h3 {
+            color: #1B5E20;
+            margin: 1.2rem 0 0.8rem;
+        }
+
+        /* Kotak Arab & Terjemahan */
+        .arab {
+            font-size: 1.6rem;
+            line-height: 2.4;
+            direction: rtl;
+            color: #1B5E20;
+            margin: 1rem 0;
+            padding: 0.8rem;
+            background-color: #F9FCF9;
+            border-radius: 8px;
+            border-right: 3px solid var(--emas);
+        }
+
+        .latin {
+            font-style: italic;
+            color: #555;
+            margin: 0.6rem 0;
+        }
+
+        .arti {
+            color: #333;
+            background-color: var(--hijau-muda);
+            padding: 0.8rem;
+            border-radius: 8px;
+        }
+
+        /* Tombol */
+        .btn {
+            display: inline-block;
+            background-color: var(--hijau-utama);
+            color: white;
+            padding: 0.7rem 1.3rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 0.8rem;
+            transition: all 0.3s ease;
+            animation: pulse 3s infinite;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #256928;
+            transform: scale(1.05);
+        }
+
+        /* Tata Letak Wudu & Sholat */
+        .langkah-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .langkah {
+            background: var(--biru-langit);
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .langkah:hover {
+            border-color: var(--hijau-utama);
+            transform: translateY(-3px);
+        }
+
+        .nomor {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            border-radius: 50%;
+            background-color: var(--emas);
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+        }
+
+        .wajib {
+            color: #D32F2F;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .sunnah {
+            color: #1976D2;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* Biografi Khulafaur Rasyidin */
+        .biografi {
+            background-color: #F9FBE7;
+            padding: 1.2rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--emas);
+        }
+
+        .teladan {
+            background-color: var(--hijau-muda);
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin-top: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--hijau-muda);
+            color: var(--hijau-utama);
+            margin-top: 2rem;
+            border-radius: 25px 25px 0 0;
+            animation: fadeInUp 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🤲 Jalan Hikmah</h1>
+    <p>Belajar Islam mudah, lengkap, dan menyenangkan untuk kehidupan sehari-hari</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#pemula">📚 Belajar Pemula</a></li>
+        <li><a href="#quran">📖 Al-Qur'an</a></li>
+        <li><a href="#ibadah">⏰ Ibadah</a></li>
+        <li><a href="#doa">🤍 Doa & Dzikir</a></li>
+        <li><a href="#khulafaur">✨ Khulafaur Rasyidin</a></li>
+        <li><a href="#kisah">📜 Kisah Nabi</a></li>
+        <li><a href="#kuis">🎮 Kuis</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
+    <!-- Belajar untuk Pemula -->
+    <div class="card" id="pemula">
+        <h2>📚 Belajar Islam untuk Pemula</h2>
+        <p>Penjelasan sederhana agar mudah dipahami bagi siapa saja yang ingin mendalami ajaran Islam.</p>
+        <br>
+        <p><strong>☪️ Rukun Islam:</strong> Syahadat, Sholat, Zakat, Puasa Ramadhan, dan Haji.</p>
+        <p><strong>☪️ Rukun Iman:</strong> Iman kepada Allah SWT, Malaikat-Malaikat-Nya, Kitab-Kitab-Nya, Rasul-Rasul-Nya, Hari Kiamat, serta Qada dan Qadar.</p>
+    </div>
+
+    <!-- Tata Cara Wudu -->
+    <div class="card" id="wudu">
+        <h2>💧 Tata Cara Wudu</h2>
+        <p>Wudu adalah syarat sahnya sholat. Berikut urutan gerakan dan tata caranya sesuai tuntunan Rasulullah ﷺ:</p>
+
+        <div class="langkah-container">
+            <div class="langkah">
+                <span class="nomor">1</span>
+                <p class="wajib">WAJIB</p>
+                <strong>Berniat</strong>
+                <p>Berniat dalam hati saat air pertama kali menyentuh anggota wudu. Contoh niat: "Saya berniat berwudu untuk menghilangkan hadas kecil karena Allah Ta'ala."</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">2</span>
+                <p class="sunnah">SUNNAH</p>
+                <strong>Membasuh Kedua Tangan</strong>
+                <p>Membasuh kedua tangan hingga pergelangan tangan sebanyak tiga kali, dimulai dari tangan kanan.</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">3</span>
+                <p class="sunnah">SUNNAH</p>
+                <strong>Berkumur</strong>
+                <p>Membasuh mulut dengan air, berkumur-kumur hingga bersih sebanyak tiga kali.</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">4</span>
+                <p class="sunnah">SUNNAH</p>
+                <strong>Membersihkan Lubang Hidung</strong>
+                <p>Menghirup air ke dalam hidung lalu mengeluarkannya kembali sebanyak tiga kali agar bersih.</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">5</span>
+                <p class="wajib">WAJIB</p>
+                <strong>Membasuh Muka</strong>
+                <p>Membasuh seluruh wajah dari dahi hingga dagu dan dari telinga kiri ke kanan sebanyak tiga kali.</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">6</span>
+                <p class="wajib">WAJIB</p>
+                <strong>Membasuh Kedua Tangan hingga Siku</strong>
+                <p>Membasuh tangan kanan hingga siku, kemudian tangan kiri hingga siku, masing-masing tiga kali.</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">7</span>
+                <p class="wajib">WAJIB</p>
+                <strong>Mengusap Seluruh Kepala</strong>
+                <p>Mengusap sebagian atau seluruh kepala dengan air yang tersisa, dimulai dari dahi ke belakang lalu kembali ke depan.</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">8</span>
+                <p class="sunnah">SUNNAH</p>
+                <strong>Mengusap Telinga</strong>
+                <p>Mengusap bagian dalam dan luar telinga dengan sisa air, dilakukan satu kali.</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">9</span>
+                <p class="wajib">WAJIB</p>
+                <strong>Membasuh Kedua Kaki hingga Mata Kaki</strong>
+                <p>Membasuh kaki kanan hingga mata kaki, kemudian kaki kiri hingga mata kaki, masing-masing tiga kali.</p>
+            </div>
+        </div>
+
+        <h3>📖 Doa Setelah Wudu</h3>
+        <div class="arab">أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ. اللَّهُمَّ اجْعَلْنِي مِنَ التَّوَّابِينَ وَاجْعَلْنِي مِنَ الْمُتَطَهِّرِينَ</div>
+        <div class="latin">Asyhadu an laa ilaaha illallaahu wahdahu laa syariika lah, wa asyhadu anna Muhammadan 'abduhu wa rasuuluh. Allahummaj'alnii minat-tawwaabiina waj'alnii minal-mutathahhiriin.</div>
+        <div class="arti">Artinya: "Saya bersaksi bahwa tidak ada Tuhan selain Allah Yang Maha Esa, tidak ada sekutu bagi-Nya, dan saya bersaksi bahwa Nabi Muhammad adalah hamba dan utusan-Nya. Ya Allah, jadikanlah saya termasuk orang-orang yang bertaubat dan jadikanlah saya termasuk orang-orang yang bersih."</div>
+    </div>
+
+    <!-- Tata Cara Sholat -->
+    <div class="card" id="sholat">
+        <h2>🤲 Tata Cara Sholat</h2>
+        <p>Sholat adalah tiang agama. Berikut urutan gerakan lengkap sesuai tuntunan Rasulullah ﷺ:</p>
+
+        <div class="langkah-container">
+            <div class="langkah">
+                <span class="nomor">1</span>
+                <strong>Niat Sholat</strong>
+                <p>Berniat di dalam hati menghadap kiblat, sesuai jenis sholat yang akan dikerjakan.</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">2</span>
+                <strong>Takbiratul Ihram</strong>
+                <p>Mengangkat kedua tangan setinggi telinga atau bahu sambil mengucapkan: <em>Allahu Akbar</em>.</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">3</span>
+                <strong>Doa Iftitah & Al-Fatihah</strong>
+                <p>Membaca doa iftitah, dilanjutkan dengan membaca Surah Al-Fatihah dan surat pendek pilihan.</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">4</span>
+                <strong>Ruku'</strong>
+                <p>Membungkukkan badan, punggung lurus, tangan memegang lutut, membaca tasbih minimal 3 kali.</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">5</span>
+                <strong>I'tidal</strong>
+                <p>Berdiri tegak kembali sambil membaca: <em>Sami'allahu liman hamidah</em> dan <em>Rabbana lakal hamdu</em>.</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">6</span>
+                <strong>Sujud Pertama</strong>
+                <p>Meletakkan dahi, hidung, telapak tangan, lutut, dan ujung jari kaki ke lantai, membaca tasbih minimal 3 kali.</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">7</span>
+                <strong>Duduk di Antara Dua Sujud</strong>
+                <p>Duduk tenang sambil membaca doa: <em>Rabbighfirlii warhamnii wajburnii warfa'nii</em>.</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">8</span>
+                <strong>Sujud Kedua</strong>
+                <p>Sama seperti sujud pertama, membaca tasbih dan memohon ampun kepada Allah SWT.</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">9</span>
+                <strong>Tasyahud Akhir</strong>
+                <p>Duduk dengan tenang membaca tasyahud lengkap sebagai penutup rakaat terakhir.</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">10</span>
+                <strong>Shalawat</strong>
+                <p>Membaca shalawat kepada Nabi Muhammad ﷺ setelah selesai membaca tasyahud.</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">11</span>
+                <strong>Doa Penutup</strong>
+                <p>Membaca doa perlindungan dari siksa neraka, siksa kubur, dan fitnah kehidupan.</p>
+            </div>
+
+            <div class="langkah">
+                <span class="nomor">12</span>
+                <strong>Salam</strong>
+                <p>Menoleh ke kanan lalu ke kiri sambil mengucapkan: <em>Assalamu'alaikum wa rahmatullah</em>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Khulafaur Rasyidin -->
+    <div class="card" id="khulafaur">
+        <h2>👑 Kisah Khulafaur Rasyidin</h2>
+        <p>Khulafaur Rasyidin berarti "para khalifah yang mendapat petunjuk". Mereka adalah empat pemimpin umat Islam terbaik setelah wafatnya Nabi Muhammad ﷺ. Berikut kisah lengkapnya:</p>
+
+        <div class="biografi">
+            <h3>1. Abu Bakar Ash-Shiddiq (632–634 M)</h3>
+            <p><strong>Singkat Kisah:</strong> Nama aslinya Abdullah bin Abi Quhafah. Beliau adalah sahabat terdekat dan orang dewasa pertama yang memeluk Islam. Karena selalu membenarkan segala kabar yang dibawa Rasulullah ﷺ, beliau mendapat gelar Ash-Shiddiq (yang paling membenarkan).</p>
+            <p><strong>Jasa Besar:</strong> Mempertahankan persatuan umat Islam, mengumpulkan dan menyatukan tulisan Al-Qur'an agar tetap terjaga keasliannya.</p>
+            <div class="teladan">
+                <strong>Teladan:</strong> Jujur, sederhana, teguh memegang prinsip, dan mengutamakan kepentingan umat.
+            </div>
+        </div>
+
+        <div class="biografi">
+            <h3>2. Umar bin Khattab (634–644 M)</h3>
+            <p><strong>Singkat Kisah:</strong> Dikenal sebagai sosok yang sangat berani, tegas, dan adil. Sebelum masuk Islam beliau adalah penentang, namun setelah menerima hidayah, beliau menjadi tameng terkuat bagi dakwah Islam.</p>
+            <p><strong>Jasa Besar:</strong> Memperluas wilayah kekuasaan Islam, mendirikan lembaga pemerintahan yang teratur, membentuk Baitul Mal, serta menetapkan kalender Hijriah sebagai penanggalan resmi umat Islam.</p>
+            <div class="teladan">
+                <strong>Teladan:</strong> Sangat adil, pemberani, bertanggung jawab, dan sangat peduli terhadap keadaan rakyatnya.</p>
+            </div>
+        </div>
+
+        <div class="biografi">
+            <h3>3. Utsman bin Affan (644–656 M)</h3>
+            <p><strong>Singkat Kisah:</strong> Dikenal sangat kaya, dermawan, lembut hati, dan sangat pemalu. Beliau dikenal sebagai orang yang banyak menyumbangkan hartanya untuk kepentingan umat dan pembangunan jalan dakwah.</p>
+            <p><strong>Jasa Besar:</strong> Menyusun dan menyeragamkan bacaan Al-Qur'an menjadi satu standar yang dikenal hingga sekarang sebagai Mushaf Utsmani, lalu memperbanyak dan menyebarkannya ke berbagai wilayah.</p>
+            <div class="teladan">
+                <strong>Teladan:</strong> Sangat dermawan, sabar, rendah hati, dan kecintaannya yang mendalam terhadap Al-Qur'an.</p>
+            </div>
+        </div>
+
+        <div class="biografi">
+            <h3>4. Ali bin Abi Thalib (656–661 M)</h3>
+            <p><strong>Singkat Kisah:</strong> Sepupu sekaligus menantu Nabi Muhammad ﷺ. Beliau adalah orang pertama yang memeluk Islam saat masih kanak-kanak, dikenal sangat cerdas, berilmu luas, dan memiliki keberanian yang luar biasa.</p>
+            <p><strong>Jasa Besar:</strong> Berusaha menegakkan keadilan di tengah situasi yang sulit dan penuh tantangan. Nasihat dan kebijaksanaannya menjadi pelajaran penting bagi umat Islam hingga saat ini.</p>
+            <div class="teladan">
+                <strong>Teladan:</strong> Bijaksana, sangat berani, sabar, dan tegas dalam menegakkan keadilan tanpa pandang bulu.</p>
+            </div>
+        </div>
+
+        <h3>💡 Hikmah yang Dapat Diambil</h3>
+        <p>Keempat pemimpin ini mengajarkan kita untuk selalu jujur, amanah, adil, mengutamakan kepentingan bersama, bersikap sederhana meski memiliki kedudukan tinggi, serta selalu menjaga persatuan umat agar tetap kokoh dan kuat.</p>
+    </div>
+
+    <!-- Al-Qur'an Digital -->
+    <div class="card" id="quran">
+        <h2>📖 Al-Qur'an Digital</h2>
+        <p>Baca Al-Qur'an lengkap dengan terjemahan bahasa Indonesia dan tafsir singkat. Mudah dicari berdasarkan kata kunci atau nomor surah.</p>
+        <div class="arab">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+        <div class="latin">Bismillaahirrahmaanirrahiim</div>
+        <div class="arti">Artinya: "Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang."</div>
+        <button class="btn">Buka Al-Qur'an Lengkap</button>
+    </div>
+
+    <!-- Jadwal & Amalan -->
+    <div class="card" id="ibadah">
+        <h2>⏰ Jadwal & Pengingat Ibadah</h2>
+        <p>Dapatkan jadwal sholat otomatis sesuai lokasi, kalender Hijriah, serta jadwal puasa sunnah yang bisa diamalkan setiap hari.</p>
+        <p><strong>Contoh Jadwal Harian:</strong></p>
+        <ul style="padding-left: 1.5rem; margin: 1rem 0;">
+            <li>Subuh: 04.30 | Dzuhur:
